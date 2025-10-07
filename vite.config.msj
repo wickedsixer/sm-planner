@@ -1,0 +1,14 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 5175,                  // port för dev-server
+    strictPort: true,            // ger fel om porten är upptagen
+    allowedHosts: [/.*\.csb\.app/], // alla CodeSandbox-hostar tillåts
+    hmr: {
+      overlay: true              // behåll HMR-overlay för felmeddelanden
+    }
+  }
+})
